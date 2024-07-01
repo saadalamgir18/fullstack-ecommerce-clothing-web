@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "An Industrial Take on Streetwear",
+  title: "Dine Markete",
   description:
     "Anyone can beat you but no one can beat your outfit as long as you wear Dine outfits.",
 };
@@ -14,7 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className="max-w-[1515px] mx-auto font-sans">{children}</body>
     </html>
   );
 }
