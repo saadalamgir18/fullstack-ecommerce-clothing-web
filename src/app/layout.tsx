@@ -1,6 +1,13 @@
 import type { Metadata } from "next";
 import "./globals.css";
-
+import { Sora } from "next/font/google";
+import Header from "@/components/Header";
+const sora = Sora({
+  subsets: ["latin"],
+  weight: ["300", "400", "600", "700"],
+  display: "swap",
+  adjustFontFallback: false,
+});
 export const metadata: Metadata = {
   title: "Dine Markete",
   description:
@@ -14,7 +21,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="max-w-[1515px] mx-auto font-sans">{children}</body>
+      <body className={`max-w-[1515px] mx-auto font ${sora.className}`}>
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }

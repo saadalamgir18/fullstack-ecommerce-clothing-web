@@ -8,35 +8,35 @@ function Header() {
       <nav>
         <ul className="flex gap-12">
           <li>
-            <Link href={"#"} className="text-xl">
+            <Link href={"#"} className="text-lg">
               Female
             </Link>
           </li>
           <li>
-            <Link href={"#"} className="text-xl">
+            <Link href={"#"} className="text-lg">
               Male
             </Link>
           </li>
           <li>
-            <Link href={"#"} className="text-xl">
+            <Link href={"#"} className="text-lg">
               Kids
             </Link>
           </li>
           <li>
-            <Link href={"#"} className="text-xl">
+            <Link href={"#"} className="text-lg">
               All Products
             </Link>
           </li>
         </ul>
       </nav>
-      <div className="flex items-center border-2 rounded-md border-gray-100 w-[30%] p-1">
+      <div className="flex items-center border-2 rounded-md border-gray-100 w-[30%] px-2 py-1">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
-          strokeWidth="1.5"
+          strokeWidth="1.2"
           stroke="currentColor"
-          className="size-6"
+          className="size-4"
         >
           <path
             strokeLinecap="round"
@@ -45,7 +45,7 @@ function Header() {
           />
         </svg>
         <input
-          className="focus:outline-none p-1 text-base"
+          className="focus:outline-none px-1 text-xs"
           type="text"
           placeholder="What you looking for"
           name=""
