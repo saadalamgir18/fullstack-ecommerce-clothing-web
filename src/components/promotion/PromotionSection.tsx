@@ -12,7 +12,7 @@ function PromotionSection() {
         <PromoOfferCard1 />
         <PromoOfferCard2 />
         <RightSide
-          background="#efe1c7"
+          background="#d7d7d9"
           promohead="Flex Sweatshirt"
           initPrice={100.0}
           lessPrice={75.0}

@@ -6,12 +6,12 @@ function NavLinks() {
     <nav>
       <ul className="flex gap-12">
         <li>
-          <Link href={"#"} className="text-lg">
+          <Link href={"/female"} className="text-lg">
             Female
           </Link>
         </li>
         <li>
-          <Link href={"#"} className="text-lg">
+          <Link href={"/male"} className="text-lg">
             Male
           </Link>
         </li>
