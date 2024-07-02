@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Sora } from "next/font/google";
-import Header from "@/components/Header";
+import Header from "@/components/header/Header";
 const sora = Sora({
   subsets: ["latin"],
   weight: ["300", "400", "600", "700"],
