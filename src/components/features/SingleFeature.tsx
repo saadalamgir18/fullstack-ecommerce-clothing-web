@@ -9,8 +9,8 @@ function SingleFeature({
 }) {
   return (
     <div className="w-[80%]">
-      <h3 className="text-xl leading-6 font-semibold mb-4">{featureHeading}</h3>
-      <p className="text-lg font-light leading-6 ">{featureDesciption}</p>
+      <h3 className="text-lg leading-4 font-semibold mb-4">{featureHeading}</h3>
+      <p className="text-base font-light leading-6 ">{featureDesciption}</p>
     </div>
   );
 }

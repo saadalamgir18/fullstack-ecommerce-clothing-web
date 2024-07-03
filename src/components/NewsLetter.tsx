@@ -2,7 +2,7 @@ import React from "react";
 
 function NewsLetter() {
   return (
-    <section className="my-32 py-40 px-32 flex flex-col justify-center items-center relative z-50">
+    <section className="my-24 py-40 px-32 flex flex-col justify-center items-center relative z-50">
       <div className="-z-10 absolute text-9xl font-bold text-[#f2f3f7] leading-10">
         Newsletter
       </div>

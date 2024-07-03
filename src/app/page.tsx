@@ -3,6 +3,7 @@ import HeroSection from "@/components/hero/HeroSection";
 import PromotionSection from "@/components/promotion/PromotionSection";
 import FeatureSection from "@/components/features/FeatureSection";
 import NewsLetter from "@/components/NewsLetter";
+import SiteMap from "@/components/sitemap/SiteMap";
 
 export default async function Home() {
   return (
