@@ -12,7 +12,7 @@ const config: Config = {
   plugins: [
     plugin(function ({ addBase }) {
       addBase({
-        html: { fontSize: "10px" },
+        html: { fontSize: "62.5%" },
       });
     }),
   ],
