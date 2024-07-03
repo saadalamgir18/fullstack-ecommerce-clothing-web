@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Sora } from "next/font/google";
 import Header from "@/components/header/Header";
+import FooterSection from "@/components/FooterSection";
 const sora = Sora({
   subsets: ["latin"],
   weight: ["300", "400", "600", "700"],
@@ -21,9 +22,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`max-w-[1515px] mx-auto font ${sora.className}`}>
-        <Header />
-        {children}
+      <body className={` ${sora.className}`}>
+        <div className="max-w-[1515px] max-h-screen mx-auto">
+          <Header />
+          {children}
+        </div>
+        <FooterSection />
       </body>
     </html>
   );
