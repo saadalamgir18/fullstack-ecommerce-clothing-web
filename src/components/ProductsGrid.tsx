@@ -3,18 +3,23 @@ import React from "react";
 import { urlForImage } from "../../sanity/lib/image";
 import { SanityDocument } from "next-sanity";
 import { client } from "../../sanity/lib/client";
+import Link from "next/link";
 
 const EVENTS_QUERY = `*[_type=="product"]{_id, price, title, image, subcategory->{title}, category-> {title}}`;
 
 async function ProductsGrid({ productCategory }: { productCategory: string }) {
   let products = await client.fetch(EVENTS_QUERY);
-  products = products.filter(
-    (product: SanityDocument) => product.category.title == `${productCategory}`
-  );
+  if (productCategory !== "all") {
+    products = products.filter(
+      (product: SanityDocument) =>
+        product.category.title == `${productCategory}`
+    );
+  }
   return (
     <div className="mt-16 grid grid-cols-4 gap-10 justify-between">
       {products.map((product: SanityDocument) => (
-        <div
+        <Link
+          href={`product/${product._id}`}
           key={product._id}
           className="w-[250px] flex flex-col justify-between gap-x-2"
         >
@@ -36,7 +41,7 @@ async function ProductsGrid({ productCategory }: { productCategory: string }) {
             </p>
           </div>
           <p className="font-bold text-lg">${product.price}</p>
-        </div>
+        </Link>
       ))}
     </div>
   );

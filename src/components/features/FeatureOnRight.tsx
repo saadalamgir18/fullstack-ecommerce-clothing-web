@@ -14,7 +14,7 @@ function FeatureOnRight() {
         </p>
         <Link
           className="px-6 py-1 bg-black text-white text-base font-semibold w-fit"
-          href={"#"}
+          href={"/products"}
         >
           See All Products
         </Link>

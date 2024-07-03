@@ -21,7 +21,7 @@ function NavLinks() {
           </Link>
         </li>
         <li>
-          <Link href={"#"} className="text-lg">
+          <Link href={"/products"} className="text-lg">
             All Products
           </Link>
         </li>

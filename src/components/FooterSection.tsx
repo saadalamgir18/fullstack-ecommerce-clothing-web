@@ -3,7 +3,7 @@ import SiteMap from "./sitemap/SiteMap";
 
 function FooterSection() {
   return (
-    <section className="mt-24  ">
+    <section className="mt-32  ">
       <SiteMap />
       <div className="border-t border-black py-7 mt-40">
         <div className="max-w-[1515px] mx-auto flex justify-between">

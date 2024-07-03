@@ -4,16 +4,16 @@ import React from "react";
 function BtnHeroSection() {
   return (
     <Link
-      href={"#"}
-      className="flex gap-x-2 text-xl font-medium bg-black text-white w-max px-5 py-3 mt-16"
+      href={"/products"}
+      className="flex gap-x-2 rounded-md text-base font-semibold bg-black text-white w-max px-6 py-4 mt-8"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
-        strokeWidth={1.5}
+        strokeWidth={1.7}
         stroke="currentColor"
-        className="size-6"
+        className="size-5"
       >
         <path
           strokeLinecap="round"

@@ -3,7 +3,7 @@ import React from "react";
 function NewsLetter() {
   return (
     <section className="my-24 py-40 px-32 flex flex-col justify-center items-center relative z-50">
-      <div className="-z-10 absolute text-9xl font-bold text-[#f2f3f7] leading-10">
+      <div className="-z-10 absolute text-9xl font-bold text-[rgba(0,0,0,0.04)] leading-10">
         Newsletter
       </div>
       <h2 className="text-4xl font-extrabold">Subscribe Our Newsletter</h2>
