@@ -9,12 +9,6 @@ const config: Config = {
   theme: {
     extend: {},
   },
-  plugins: [
-    plugin(function ({ addBase }) {
-      addBase({
-        html: { fontSize: "62.5%" },
-      });
-    }),
-  ],
+  plugins: [],
 };
 export default config;

@@ -3,7 +3,7 @@ import RecentProductGrid from "./RecentProductGrid";
 
 function RecentProducts() {
   return (
-    <section className="mt-[96px]">
+    <section className="mt-24">
       <SectionHeader
         sectionHeading="Check What We Have"
         sectionName="products"

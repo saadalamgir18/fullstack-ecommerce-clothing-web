@@ -7,7 +7,7 @@ import HeroImage from "./HeroImage";
 
 function HeroSection() {
   return (
-    <section className="grid grid-cols-2 gap-y-12 mt-[9.6rem] px-8">
+    <section className="grid grid-cols-2 gap-y-12 mt-24 px-8">
       <div className="flex flex-col pt-8 flex-1">
         <span className="text-md bg-[#e1edff] text-[rgb(0,0,255)] px-2 py-1 w-max rounded-md font-semibold">
           Sale 70%

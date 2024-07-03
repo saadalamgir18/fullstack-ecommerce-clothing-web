@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={` ${sora.className}`}>
-        <div className="max-w-[1515px] max-h-screen mx-auto">
+        <div className="max-w-[1515px] mx-auto">
           <Header />
           {children}
         </div>

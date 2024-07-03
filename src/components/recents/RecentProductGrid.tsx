@@ -16,7 +16,7 @@ async function RecentProductGrid({
     (product: SanityDocument) => product.category.title == `${productCategory}`
   );
   return (
-    <div className="grid grid-cols-3 mt-[6.4rem] gap-x-6">
+    <div className="grid grid-cols-3 mt-12 gap-x-6">
       {products.map((product: SanityDocument) => (
         <div
           key={product._id}

@@ -6,7 +6,7 @@ import PromoOfferCard1 from "./PromoOfferCard1";
 import PromoOfferCard2 from "./PromoOfferCard2";
 function PromotionSection() {
   return (
-    <section className="mt-[16rem] pt-8">
+    <section className="mt-32 pt-8">
       <SectionHeader
         sectionHeading="Our Promotions Events"
         sectionName="promotions"
