@@ -1,13 +1,20 @@
+// "use client";
 import Image from "next/image";
 import React from "react";
 import { urlForImage } from "../../sanity/lib/image";
 import { SanityDocument } from "next-sanity";
 import { client } from "../../sanity/lib/client";
 import Link from "next/link";
+// import { useRecoilValue } from "recoil";
+// import { productsAtomFamily } from "@/store/Atoms/useRecoil";
 
 const EVENTS_QUERY = `*[_type=="product"]{_id, price, title, image, subcategory->{title}, category-> {title}}`;
 
 async function ProductsGrid({ productCategory }: { productCategory: string }) {
+  // const id = "";
+  // const products = useRecoilValue(productsAtomFamily({ productCategory, id }));
+  // console.log(products);
+
   let products = await client.fetch(EVENTS_QUERY);
   if (productCategory !== "all") {
     products = products.filter(
@@ -17,7 +24,7 @@ async function ProductsGrid({ productCategory }: { productCategory: string }) {
   }
   return (
     <div className="mt-16 grid grid-cols-4 gap-10 justify-between">
-      {products.map((product: SanityDocument) => (
+      {products?.map((product: SanityDocument) => (
         <Link
           href={`product/${product._id}`}
           key={product._id}

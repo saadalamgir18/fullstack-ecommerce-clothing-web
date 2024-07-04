@@ -1,13 +1,15 @@
 "use client";
+import { productCount } from "@/store/Atoms/useRecoil";
 import React, { useState } from "react";
+import { useRecoilState } from "recoil";
 
 function Quantity() {
-  const [quantity, setQuantity] = useState(1);
+  const [quantity, setQuantity] = useRecoilState(productCount);
   const handleIncrease = () => {
     setQuantity(quantity + 1);
   };
   const handleDecrease = () => {
-    setQuantity(quantity - 1);
+    quantity > 1 ? setQuantity(quantity - 1) : setQuantity(1);
   };
   return (
     <div className="flex items-center gap-6">

@@ -3,6 +3,7 @@ import "./globals.css";
 import { Sora } from "next/font/google";
 import Header from "@/components/header/Header";
 import FooterSection from "@/components/FooterSection";
+import RecoilProvider from "./RecoilProvider";
 const sora = Sora({
   subsets: ["latin"],
   weight: ["300", "400", "600", "700"],
@@ -23,11 +24,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={` ${sora.className}`}>
-        <div className="max-w-[1515px] mx-auto">
-          <Header />
-          {children}
-        </div>
-        <FooterSection />
+        <RecoilProvider>
+          <div className="max-w-[1515px] mx-auto">
+            <Header />
+            {children}
+          </div>
+          <FooterSection />
+        </RecoilProvider>
       </body>
     </html>
   );
