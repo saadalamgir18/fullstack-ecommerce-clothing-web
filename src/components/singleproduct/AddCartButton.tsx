@@ -1,9 +1,24 @@
+"use client";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 function AddCartButton({ price }: { price: number }) {
+  const router = useRouter();
+  const handleAddToCart = async () => {
+    const res = fetch("/api/cart", {
+      method: "POST",
+      body: JSON.stringify({
+        product_id: "adasdadadasdxsasdasd",
+      }),
+    });
+    router.push("/cart");
+  };
   return (
     <div className="flex gap-6 mt-6">
-      <button className="bg-black text-white text-sm px-6 py-1 font-semibold flex gap-2 items-center">
+      <button
+        onClick={handleAddToCart}
+        className="bg-black text-white text-sm px-6 py-1 font-semibold flex gap-2 items-center"
+      >
         <span>
           <svg
             xmlns="http://www.w3.org/2000/svg"

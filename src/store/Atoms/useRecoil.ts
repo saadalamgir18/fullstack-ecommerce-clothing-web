@@ -6,6 +6,13 @@ export const productCount = atom({
   default: 1,
 });
 
+export const product_details = atom({
+  key: "product_details",
+  default: {
+    pruduct_id: "",
+  },
+});
+
 // export const productsAtomFamily = atomFamily({
 //   key: "productsAtomFamily",
 //   default: selectorFamily({
