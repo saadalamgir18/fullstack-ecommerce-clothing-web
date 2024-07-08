@@ -11,7 +11,7 @@ function PromotionSection() {
         sectionHeading="Our Promotions Events"
         sectionName="promotions"
       />
-      <div className="grid sm:grid-cols-[1fr_1fr_280px_280px] sm:grid-rows-2 gap-6 mt-16">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1fr_1fr_280px_280px] lg:grid-rows-2 gap-6 mt-16">
         <PromoOfferCard1 />
         <PromoOfferCard2 />
         <RightSide
@@ -20,7 +20,7 @@ function PromotionSection() {
           initPrice={100.0}
           lessPrice={75.0}
           eventImage={event2}
-          gridClass="sm:col-start-3 sm:row-start-1 sm:row-end-3"
+          gridClass="lg:col-start-3 lg:row-start-1 lg:row-end-3"
         />
         <RightSide
           background="#d7d7d9"
@@ -28,7 +28,7 @@ function PromotionSection() {
           initPrice={190}
           lessPrice={75.0}
           eventImage={event3}
-          gridClass="sm:col-star-4 sm:row-start-1 sm:row-end-3"
+          gridClass="lg:col-star-4 lg:row-start-1 lg:row-end-3"
         />
       </div>
     </section>

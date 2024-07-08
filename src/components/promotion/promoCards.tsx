@@ -18,7 +18,7 @@ function RightSide({
   return (
     <div className={`bg-[${background}] ${gridClass} flex flex-col`}>
       <div className="p-5">
-        <p className="text-xs">{promohead}</p>
+        <p>{promohead}</p>
         <div className="flex gap-x-3">
           <del>${initPrice}.00</del>{" "}
           <span className="font-semibold">${lessPrice}.00</span>

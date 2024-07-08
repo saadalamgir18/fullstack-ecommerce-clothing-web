@@ -20,25 +20,23 @@ async function RecentProductGrid({
       {products.map((product: SanityDocument) => (
         <div
           key={product._id}
-          className="flex flex-col justify-between  self-center hover:scale-105 duration-500 cursor-pointer"
+          className="flex flex-col justify-between  self-center hover:scale-105 duration-500 cursor-pointer  "
         >
-          <div>
-            <div className="flex items-center">
-              <Image
-                src={urlForImage(product.image)}
-                width={380}
-                height={400}
-                alt=""
-                className=""
-              />
-            </div>
-            <p className="text-lg font-semibold mt-3 leading-5 tracking-wide">
-              {product.title}
-            </p>
-            {/* <p className="font-semibold text-base text-[#888]">
+          <div className="flex items-center">
+            <Image
+              src={urlForImage(product.image)}
+              width={380}
+              height={400}
+              alt=""
+              className=""
+            />
+          </div>
+          <p className="text-lg font-semibold mt-3 leading-5 tracking-wide">
+            {product.title}
+          </p>
+          {/* <p className="font-semibold text-base text-[#888]">
               {product.subcategory.title}
             </p> */}
-          </div>
           <p className="font-semibold text-lg mt-3">${product.price}</p>
         </div>
       ))}
