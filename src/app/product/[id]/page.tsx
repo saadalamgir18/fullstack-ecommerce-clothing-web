@@ -40,7 +40,7 @@ export default function Page({ params }: { params: { id: string } }) {
       {products.map((product: PRODUCT) => (
         <div
           key={product._id}
-          className="mt-24 grid grid-cols-[7%_1.5fr_1fr] gap-x-6"
+          className="mt-24 grid grid-cols-[18%_1fr] lg:grid-cols-[7%_1.5fr_1fr] gap-x-6"
         >
           <div>
             <Image

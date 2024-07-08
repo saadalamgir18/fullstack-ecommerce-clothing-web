@@ -24,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="overflow-x-hidden">
-      <body className={` ${sora.className} overflow-x-hidden`}>
+      <body className={`${sora.className} overflow-x-hidden`}>
         <RecoilProvider>
           <Toaster position="top-right" />
           <div className="max-w-[1515px] mx-auto px-12">
