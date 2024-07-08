@@ -23,8 +23,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={` ${sora.className}`}>
+    <html lang="en" className="overflow-x-hidden">
+      <body className={` ${sora.className} overflow-x-hidden`}>
         <RecoilProvider>
           <Toaster position="top-right" />
           <div className="max-w-[1515px] mx-auto px-3">

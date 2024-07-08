@@ -10,7 +10,7 @@ function CartButton() {
   return (
     <Link
       href={"/cart"}
-      className={`${btn ? "" : "hidden"} flex items-center justify-center bg-[#f1f1f1] rounded-full p-2 relative`}
+      className={`max-lg:hidden flex items-center justify-center bg-[#f1f1f1] rounded-full p-2 relative`}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"

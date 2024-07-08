@@ -7,7 +7,7 @@ import CartButton from "./CartButton";
 import NavButton from "./NavButton";
 function Header() {
   return (
-    <header className="flex justify-between items-center mt-10">
+    <header className="max-lg:relative flex justify-between items-center mt-10">
       <Link href={"/"} className="">
         <Image src={Logo} width={140} height={31} alt="Logo" />
       </Link>
