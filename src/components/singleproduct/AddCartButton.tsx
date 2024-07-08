@@ -1,40 +1,29 @@
 "use client";
-import {
-  cart_details,
-  product_details,
-  productCount,
-} from "@/store/Atoms/useRecoil";
-import { useRouter } from "next/navigation";
+import { product_details, productCount } from "@/store/Atoms/useRecoil";
 import React from "react";
 import { toast } from "react-hot-toast";
-import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
+import { useRecoilValue } from "recoil";
 
 function AddCartButton({ price }: { price: number }) {
   const quantity = useRecoilValue(productCount);
-  // const [cart_detail, setCartDetail] = useRecoil(cart_details);
   const product = useRecoilValue(product_details);
-  const [cartQuantity, setCartQuantity] = useRecoilState(cart_details);
-
-  const router = useRouter();
   const handleAddToCart = async () => {
-    const res = fetch("/api/cart", {
+    const res = await fetch("/api/cart", {
       method: "POST",
       body: JSON.stringify({
         product_id: product.pruduct_id,
         quantity: quantity,
       }),
     });
-    // setCartDetail(quantity);
-    setCartQuantity(quantity + quantity);
+
     toast.success("added to cart", {
       duration: 3000,
     });
-    // router.push("/cart");
   };
   return (
     <div className="flex gap-6 mt-6">
       <button
-        onClick={handleAddToCart}
+        onClick={() => handleAddToCart()}
         className="bg-black text-white text-sm px-6 py-1 font-semibold flex gap-2 items-center"
       >
         <span>

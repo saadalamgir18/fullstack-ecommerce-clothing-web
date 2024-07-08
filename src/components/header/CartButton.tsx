@@ -1,12 +1,20 @@
 "use client";
-import { cart_details, navBtn } from "@/store/Atoms/useRecoil";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useRecoilValue } from "recoil";
 
 function CartButton() {
-  const cartDetail = useRecoilValue(cart_details);
-  const btn = useRecoilValue(navBtn);
+  // const btn = useRecoilValue(navBtn);
+  // const [cart_count, setCartCount] = useState(0);
+  // useEffect(() => {
+  //   const cartCount_func = async () => {
+  //     const res = await fetch("http://localhost:3000/api/cart", {
+  //       method: "GET",
+  //     });
+  //     const cart_count = await res.json();
+  //     setCartCount(cart_count);
+  //   };
+  // }, [cart_count]);
   return (
     <Link
       href={"/cart"}
@@ -27,7 +35,7 @@ function CartButton() {
         />
       </svg>
       <span className="absolute top-0 right-1 bg-red-500 text-white rounded-full text-[12px] px-[4px] text-center font-semibold">
-        {cartDetail}
+        {0}
       </span>
     </Link>
   );

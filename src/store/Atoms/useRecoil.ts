@@ -11,8 +11,8 @@ export const navBtn = atom({
   default: false,
 });
 
-export const cart_details = atom({
-  key: "cart_details",
+export const cart_count = atom({
+  key: "cart_count",
   default: 1,
 });
 export const product_details = atom({
