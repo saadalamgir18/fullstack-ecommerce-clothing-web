@@ -8,7 +8,7 @@ function SingleFeature({
   featureDesciption: string;
 }) {
   return (
-    <div className="w-[80%]">
+    <div className="sm:w-[80%]">
       <h3 className="text-lg leading-4 font-semibold mb-4">{featureHeading}</h3>
       <p className="text-base font-light leading-6 ">{featureDesciption}</p>
     </div>

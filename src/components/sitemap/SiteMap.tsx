@@ -4,7 +4,7 @@ import RightsGrid from "./RightsGrid";
 
 function SiteMap() {
   return (
-    <section className="grid grid-cols-[2fr_1fr_1fr_1fr] max-w-[1515px] mx-auto">
+    <section className="sm:grid sm:grid-cols-[2fr_1fr_1fr_1fr] max-w-[1515px] mx-auto flex flex-col gap-8">
       <FirstGrid />
       <RightsGrid
         linksArray={[

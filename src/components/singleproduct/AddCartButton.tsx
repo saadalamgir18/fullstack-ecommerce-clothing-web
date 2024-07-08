@@ -1,17 +1,35 @@
 "use client";
+import {
+  cart_details,
+  product_details,
+  productCount,
+} from "@/store/Atoms/useRecoil";
 import { useRouter } from "next/navigation";
 import React from "react";
+import { toast } from "react-hot-toast";
+import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
 
 function AddCartButton({ price }: { price: number }) {
+  const quantity = useRecoilValue(productCount);
+  // const [cart_detail, setCartDetail] = useRecoil(cart_details);
+  const product = useRecoilValue(product_details);
+  const [cartQuantity, setCartQuantity] = useRecoilState(cart_details);
+
   const router = useRouter();
   const handleAddToCart = async () => {
     const res = fetch("/api/cart", {
       method: "POST",
       body: JSON.stringify({
-        product_id: "adasdadadasdxsasdasd",
+        product_id: product.pruduct_id,
+        quantity: quantity,
       }),
     });
-    router.push("/cart");
+    // setCartDetail(quantity);
+    setCartQuantity(quantity + quantity);
+    toast.success("added to cart", {
+      duration: 3000,
+    });
+    // router.push("/cart");
   };
   return (
     <div className="flex gap-6 mt-6">
@@ -37,7 +55,9 @@ function AddCartButton({ price }: { price: number }) {
         </span>
         Add to Cart
       </button>
-      <p className="text-2xl font-bold tracking-widest">${price}.00</p>
+      <p className="text-2xl font-bold tracking-widest">
+        ${quantity * price}.00
+      </p>
     </div>
   );
 }

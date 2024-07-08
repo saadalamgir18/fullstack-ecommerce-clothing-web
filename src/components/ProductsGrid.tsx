@@ -5,7 +5,7 @@ import { urlForImage } from "../../sanity/lib/image";
 import { SanityDocument } from "next-sanity";
 import { client } from "../../sanity/lib/client";
 import Link from "next/link";
-import { Image as Iimage } from "sanity";
+import { Image as Iimage, QueryParams } from "sanity";
 
 export type PRODUCT = {
   _id: string;
@@ -22,8 +22,16 @@ export type PRODUCT = {
 
 const EVENTS_QUERY = `*[_type=="product"]{_id, price, title, image, subcategory->{title}, category-> {title}}`;
 
-async function ProductsGrid({ productCategory }: { productCategory: string }) {
-  let products = await client.fetch(EVENTS_QUERY);
+async function ProductsGrid({
+  productCategory,
+  params = {},
+}: {
+  productCategory: string;
+  params?: QueryParams;
+}) {
+  let products = await client.fetch(EVENTS_QUERY, params, {
+    next: { revalidate: 60 },
+  });
   if (productCategory !== "all") {
     products = products.filter(
       (product: SanityDocument) =>
@@ -31,7 +39,7 @@ async function ProductsGrid({ productCategory }: { productCategory: string }) {
     );
   }
   return (
-    <div className="mt-16 grid grid-cols-4 gap-10 justify-between">
+    <div className="mt-16 grid grid-cols-1 md:grid-cols-3 place-items-center lg:grid-cols-4 gap-10 justify-between">
       {products?.map((product: PRODUCT) => (
         <Link
           href={`product/${product._id}`}

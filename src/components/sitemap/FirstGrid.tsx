@@ -8,9 +8,9 @@ import { FaLinkedinIn } from "react-icons/fa6";
 
 function FirstGrid() {
   return (
-    <div className="flex flex-col justify-between w-4/5">
+    <div className="flex flex-col gap-8 justify-between w-4/5">
       <Image src={logo} width={140} height={131} alt="" className="" />
-      <p className="text-gray-500 leading-5">
+      <p className="text-gray-500 leading-7 ">
         Small, artisan label that offers a thoughtfully curated collection of
         high quality everyday essentials made
       </p>

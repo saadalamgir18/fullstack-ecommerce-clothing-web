@@ -28,7 +28,7 @@ function RightSide({
         <Image
           src={eventImage}
           alt="event2"
-          className="w-full"
+          className="sm:w-full"
           width={280}
           height={340}
         />

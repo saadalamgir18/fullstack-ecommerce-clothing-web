@@ -1,13 +1,39 @@
+"use client";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { urlForImage } from "../../../../sanity/lib/image";
 import { client } from "../../../../sanity/lib/client";
 import ProductCart from "@/components/singleproduct/ProductCart";
 import { PRODUCT } from "@/components/ProductsGrid";
+import { useRecoilValue, useSetRecoilState } from "recoil";
+import { product_details, productCount } from "@/store/Atoms/useRecoil";
 
-export default async function Page({ params }: { params: { id: string } }) {
+export default function Page({ params }: { params: { id: string } }) {
+  const [products, productState] = useState<PRODUCT[]>([]);
+  const quantity = useRecoilValue(productCount);
+
+  const productsDetail = useSetRecoilState(product_details);
   const EVENTS_QUERY = `*[_type=="product" && _id == "${params.id}"]{_id, price, title, image, subcategory->{title}, category-> {title}}`;
-  let products = await client.fetch(EVENTS_QUERY);
+
+  useEffect(() => {
+    const fetchEvents = async () => {
+      try {
+        const data: PRODUCT[] = await client.fetch(EVENTS_QUERY, params, {
+          next: { revalidate: 60 },
+        });
+        productsDetail({
+          pruduct_id: data[0]._id,
+          title: data[0].title,
+          quantity: quantity,
+        });
+        productState(data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
+    fetchEvents();
+  }, [EVENTS_QUERY]);
 
   return (
     <div className="mt-24">

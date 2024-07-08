@@ -1,11 +1,16 @@
+"use client";
+import { cart_details, navBtn } from "@/store/Atoms/useRecoil";
 import Link from "next/link";
 import React from "react";
+import { useRecoilValue } from "recoil";
 
 function CartButton() {
+  const cartDetail = useRecoilValue(cart_details);
+  const btn = useRecoilValue(navBtn);
   return (
     <Link
       href={"/cart"}
-      className="flex items-center justify-center bg-[#f1f1f1] rounded-full p-2 relative"
+      className={`${btn ? "" : "hidden"} flex items-center justify-center bg-[#f1f1f1] rounded-full p-2 relative`}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -22,7 +27,7 @@ function CartButton() {
         />
       </svg>
       <span className="absolute top-0 right-1 bg-red-500 text-white rounded-full text-[12px] px-[4px] text-center font-semibold">
-        0
+        {cartDetail}
       </span>
     </Link>
   );

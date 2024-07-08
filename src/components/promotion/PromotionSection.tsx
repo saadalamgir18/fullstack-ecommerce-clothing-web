@@ -6,12 +6,12 @@ import PromoOfferCard1 from "./PromoOfferCard1";
 import PromoOfferCard2 from "./PromoOfferCard2";
 function PromotionSection() {
   return (
-    <section className="mt-32 pt-8">
+    <section className="mt-24 sm:mt-32 pt-8">
       <SectionHeader
         sectionHeading="Our Promotions Events"
         sectionName="promotions"
       />
-      <div className="grid grid-cols-[1fr_1fr_280px_280px] grid-rows-2 gap-6 mt-16">
+      <div className="grid sm:grid-cols-[1fr_1fr_280px_280px] sm:grid-rows-2 gap-6 mt-16">
         <PromoOfferCard1 />
         <PromoOfferCard2 />
         <RightSide
@@ -20,7 +20,7 @@ function PromotionSection() {
           initPrice={100.0}
           lessPrice={75.0}
           eventImage={event2}
-          gridClass="col-start-3 row-start-1 row-end-3"
+          gridClass="sm:col-start-3 sm:row-start-1 sm:row-end-3"
         />
         <RightSide
           background="#d7d7d9"
@@ -28,7 +28,7 @@ function PromotionSection() {
           initPrice={190}
           lessPrice={75.0}
           eventImage={event3}
-          gridClass="col-star-4 row-start-1 row-end-3"
+          gridClass="sm:col-star-4 sm:row-start-1 sm:row-end-3"
         />
       </div>
     </section>

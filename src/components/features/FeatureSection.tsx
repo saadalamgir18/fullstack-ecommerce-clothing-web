@@ -7,7 +7,7 @@ function FeatureSection() {
   return (
     <section className="mt-24  mb-24">
       <FeaturesHeading />
-      <div className="grid grid-cols-2 gap-x-6">
+      <div className="grid sm:grid-cols-2 gap-x-6">
         <PropertiesList />
         <FeatureOnRight />
       </div>

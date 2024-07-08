@@ -4,8 +4,14 @@ import featureImage from "@/assets/feature.png";
 import Link from "next/link";
 function FeatureOnRight() {
   return (
-    <div className="flex gap-x-10">
-      <Image src={featureImage} height={350} width={300} alt="" />
+    <div className="flex flex-col items-center sm:flex-row gap-x-10 gap-y-8 mt-12">
+      <Image
+        src={featureImage}
+        height={350}
+        width={300}
+        alt=""
+        className="px-2"
+      />
       <div className="flex flex-col justify-center gap-y-8">
         <p className="text-base font-light leading-6">
           This piece is ethically crafted in our small family-owned workshop in

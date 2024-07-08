@@ -6,13 +6,32 @@ export const productCount = atom({
   default: 1,
 });
 
+export const navBtn = atom({
+  key: "navBtn",
+  default: false,
+});
+
+export const cart_details = atom({
+  key: "cart_details",
+  default: 1,
+});
 export const product_details = atom({
   key: "product_details",
   default: {
     pruduct_id: "",
+    title: "",
+    quantity: 1,
   },
 });
-
+// export const cart_details = selector({
+//   key: "cart_details",
+//   get: ({ get }) => {
+//     const cartCount = get(productCount);
+//     return cartCount;
+//   },
+// });
+// pruduct_id: "",
+//     title: "",
 // export const productsAtomFamily = atomFamily({
 //   key: "productsAtomFamily",
 //   default: selectorFamily({

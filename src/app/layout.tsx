@@ -4,6 +4,7 @@ import { Sora } from "next/font/google";
 import Header from "@/components/header/Header";
 import FooterSection from "@/components/FooterSection";
 import RecoilProvider from "./RecoilProvider";
+import { Toaster } from "react-hot-toast";
 const sora = Sora({
   subsets: ["latin"],
   weight: ["300", "400", "600", "700"],
@@ -25,7 +26,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={` ${sora.className}`}>
         <RecoilProvider>
-          <div className="max-w-[1515px] mx-auto">
+          <Toaster position="top-right" />
+          <div className="max-w-[1515px] mx-auto px-3">
             <Header />
             {children}
           </div>

@@ -3,10 +3,10 @@ import SiteMap from "./sitemap/SiteMap";
 
 function FooterSection() {
   return (
-    <section className="mt-32  ">
+    <section className="mt-32 pl-8">
       <SiteMap />
-      <div className="border-t border-black py-7 mt-40">
-        <div className="max-w-[1515px] mx-auto flex justify-between">
+      <div className="border-t border-black py-7 mt-12 sm:mt-40">
+        <div className="max-w-[1515px] mx-auto flex flex-col sm:flex-row gap-4 justify-between">
           <p className="text-base text-[#666]">
             Copyright &copy; 2022 Dine Market
           </p>

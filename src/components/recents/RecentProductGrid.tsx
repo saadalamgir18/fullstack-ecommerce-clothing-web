@@ -16,11 +16,11 @@ async function RecentProductGrid({
     (product: SanityDocument) => product.category.title == `${productCategory}`
   );
   return (
-    <div className="grid grid-cols-3 mt-12 gap-x-6">
+    <div className="grid sm:grid-cols-3 gap-8 place-items-center mt-12 gap-x-6">
       {products.map((product: SanityDocument) => (
         <div
           key={product._id}
-          className="flex flex-col justify-between self-center hover:scale-105 duration-500 cursor-pointer"
+          className="flex flex-col justify-between  self-center hover:scale-105 duration-500 cursor-pointer"
         >
           <div>
             <div className="flex items-center">

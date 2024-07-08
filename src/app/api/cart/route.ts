@@ -19,7 +19,7 @@ export async function POST(request: NextRequest) {
   const res = await prisma.cart.create({
     data: {
       product_id: req.product_id,
-      quantity: 1,
+      quantity: req.quantity,
       user_id: setcooki.get("user_id")?.value as string,
     },
   });
