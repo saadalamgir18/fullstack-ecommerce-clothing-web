@@ -1,4 +1,5 @@
 "use client";
+import { addcart } from "@/actions/addcart";
 import { product_details, productCount } from "@/store/Atoms/useRecoil";
 import React from "react";
 import { toast } from "react-hot-toast";
@@ -8,13 +9,7 @@ function AddCartButton({ price }: { price: number }) {
   const quantity = useRecoilValue(productCount);
   const product = useRecoilValue(product_details);
   const handleAddToCart = async () => {
-    const res = await fetch("/api/cart", {
-      method: "POST",
-      body: JSON.stringify({
-        product_id: product.pruduct_id,
-        quantity: quantity,
-      }),
-    });
+    await addcart(product.pruduct_id, quantity);
 
     toast.success("added to cart", {
       duration: 3000,
